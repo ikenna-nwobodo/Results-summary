@@ -1,79 +1,54 @@
-<div class="containerm">
-
-    <main>
-        <h1>Dashboard</h1>
-
-        <div class="insights">
-            <div class="sales">
-                <span class="material-symbols-outlined">
-                    analytics
-                </span>
-                <div class="middle">
-                    <div class="left">
-                        <h1>Total Complaints</h1>
-                        <h2>@complaintList.Count() </h2>
-                    </div>
-
+<aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="logo.png" alt="">
+                    <h2>EGA<span class="danger">TOR</span></h2>
                 </div>
-                <small class="text-muted">Last 24 Hours</small>
-            </div>
-            <!------------------END OF SALES------------------>
-            <div class="expenses">
-                <span class="material-symbols-outlined">
-                    priority_high
-                </span>
-                <div class="middle">
-                    <div class="left">
-                        <h1>Unresolved Complaints</h1>
-                        <h2>@complaintList.Count(t => !t.IsCompleted)</h2>
-                    </div>
-
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
                 </div>
-                <small class="text-muted">Last 24 Hours</small>
             </div>
-            <!------------------END OF EXPENSES------------------>
-            <div class="income">
-                <span class="material-symbols-outlined">
-                    done
-                </span>
-                <div class="middle">
-                    <div class="left">
-                        <h1>Resolved Complaints</h1>
-                        <h2>@complaintList.Count(t => t.IsCompleted)</h2>
-                    </div>
-                </div>
-                <small class="text-muted">Last 24 Hours</small>
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Customers</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>Orders</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Messages</h3>
+                    <span class="message-count">26</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Products</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>Add Product</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
             </div>
-            <!------------------END OF INCOME------------------>
-        </div>
-        <div class="recent-orders">
-            <h1>Recent Complaints</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product Name</th>
-                        <th>Complaint Description</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                   @foreach (var p in complaintList.OrderByDescending(p => p.Id).Take(5))
-                    {
-                        <tr>
-                            <td>@p.Product</td>
-                            <td>@p.Description</td>
-                            <td class="warning">@CheckStatus(p.IsCompleted)</td>
-                            <td class="primary"><a href="#">Details</a></td>
-                        </tr>
-                    
-                    }
-
-                </tbody>
-            </table>
-            <a href="complaintlist">Show All</a>
-           
-        </div>
-    </main>
-    <!-------------END OF MAIN---------->
-
-</div>
+        </aside>
